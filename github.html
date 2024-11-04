@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/favicon.png">
+   <!--foi boa as aprensentacoes👍-->
 </head>
 <body>
 
@@ -21,9 +22,18 @@
         <h1>Bem-vindo ao meu site!</h1>
     </div>
 -->
+    <section>
+        <video autoplay muted loop>
+            <source src="/assets/mobile_video.mp4" type="video/mp4" media="(min-width: 768px)">
+            <source src="/assets/tablet_video.mp4" type="video/mp4" media="(min-width:768px) and (max-width:992px)">
+            <source src="/assets/desktop_video.mp4" type="video/mp4" media="(min-width: 993px) and (max-width: 1200px)">
+            <source src="/assets/tv_video.mp4" type="video/mp4" media="(min-width: 1201px)">
+        </video>
+    </section>
 
     <header>
         <h1>titulo</h1>
+     
         <div>
             <button><a href="./github.html">github</a></button>
             <button><a href="./git_desktop.html">github desktop</a></button>
@@ -31,7 +41,28 @@
         </div>
     </header>
     <article>
-        <img src="./assets/Job_offers.png" alt="">
+        <img src="./assets/Job_offers.png" alt=""  width="30%" height="30%">
+
+        <h3>git</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, optio! Reprehenderit aspernatur eveniet blanditiis praesentium dolore quibusdam repellat, fugiat eos, dolorem corrupti dolorum quo. Aut exercitationem commodi repudiandae. Iure, saepe.</p>
     </article>
+
+
+    <script>
+        const video = document.getElementById('background-video');
+        const width = window.innerWidth;
+
+        if (width < 768) {
+            video.querySelector('source').src = '/assets/mobile_video.mp4';
+        } else if (width >= 768 && width <= 992) {
+            video.querySelector('source').src = '/assets/tablet_video.mp4';
+        } else if (width > 992 && width <= 1200) {
+            video.querySelector('source').src = '/assets/desktop_video.mp4';
+        } else {
+            video.querySelector('source').src = '/assets/tv_video.mp4';
+        }
+
+        video.load();
+    </script>
 </body>
 </html>
